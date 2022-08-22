@@ -21,11 +21,12 @@ verifier:
   name: inspec
 
 platforms:
-  - name: ubuntu-20.04
-  - name: centos-8
+  - name: ubuntu-18.04
 
 suites:
   - name: default
+    run_list:
+      - recipe[ais::ldaps]
     verifier:
       inspec_tests:
         - test/integration/default
