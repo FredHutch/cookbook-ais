@@ -28,6 +28,7 @@ suites:
     run_list:
       - recipe[ais::ldap_server]
       - recipe[ldap_server_test::default]
+      - recipe[ais::ldap_autofs_client]
     verifier:
       inspec_tests:
         - test/integration/default

@@ -1,0 +1,12 @@
+USE_MISC_DEVICE="yes"
+
+MASTER_MAP_NAME="<%= @master_map_name %>"
+# LOGGING="verbose"
+LDAP_URI="<%= @ldap_uri %>"
+SEARCH_BASE="<%= @search_base %>"
+
+MAP_OBJECT_CLASS="automountMap"
+ENTRY_OBJECT_CLASS="automount"
+MAP_ATTRIBUTE="ou"
+ENTRY_ATTRIBUTE="cn"
+VALUE_ATTRIBUTE="automountInformation"

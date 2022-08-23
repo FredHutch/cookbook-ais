@@ -48,11 +48,11 @@ entryCSN: 20220822233027.251923Z#000000#000#000000
 modifiersName: cn=admin,dc=example,dc=org
 modifyTimestamp: 20220822233027Z
 
-dn: cn=/home,ou=auto.master,ou=automount,ou=ais,dc=example,dc=org
-cn: /home
+dn: cn=/homes,ou=auto.master,ou=automount,ou=ais,dc=example,dc=org
+cn: /homes
 objectClass: top
 objectClass: automount
-automountInformation: ldap:ou=auto.home,ou=automount,ou=ais,dc=example,dc=or
+automountInformation: ldap:ou=auto.homes,ou=automount,ou=ais,dc=example,dc=or
  g --timeout=60 --ghost
 structuralObjectClass: automount
 entryUUID: 25d7649c-b6be-103c-8f23-37845c981be3
@@ -62,8 +62,8 @@ entryCSN: 20220822233027.255332Z#000000#000#000000
 modifiersName: cn=admin,dc=example,dc=org
 modifyTimestamp: 20220822233027Z
 
-dn: ou=auto.home,ou=automount,ou=ais,dc=example,dc=org
-ou: auto.home
+dn: ou=auto.homes,ou=automount,ou=ais,dc=example,dc=org
+ou: auto.homes
 objectClass: top
 objectClass: automountMap
 structuralObjectClass: automountMap
@@ -74,26 +74,11 @@ entryCSN: 20220822233027.271652Z#000000#000#000000
 modifiersName: cn=admin,dc=example,dc=org
 modifyTimestamp: 20220822233027Z
 
-dn: cn=atombaby,ou=auto.home,ou=automount,ou=ais,dc=example,dc=org
-cn: atombaby
-objectClass: top
-objectClass: automount
-automountInformation: -fstype=nfs,rw,hard,intr,nodev,exec,nosuid,rsize=8192,
- wsize=8192 nfs.example.com:/export/home/atombaby
-structuralObjectClass: automount
-entryUUID: 25da812c-b6be-103c-8f25-37845c981be3
-creatorsName: cn=admin,dc=example,dc=org
-createTimestamp: 20220822233027Z
-entryCSN: 20220822233027.275679Z#000000#000#000000
-modifiersName: cn=admin,dc=example,dc=org
-modifyTimestamp: 20220822233027Z
-
-dn: cn=alice,ou=auto.home,ou=automount,ou=ais,dc=example,dc=org
+dn: cn=alice,ou=auto.homes,ou=automount,ou=ais,dc=example,dc=org
 cn: alice
 objectClass: top
 objectClass: automount
-automountInformation: -fstype=nfs,rw,hard,intr,nodev,exec,nosuid,rsize=8192,
- wsize=8192 nfs.example.com:/export/home/alice
+automountInformation: -fstype=bind,rw :/export/home/alice
 structuralObjectClass: automount
 entryUUID: 25dad4d8-b6be-103c-8f26-37845c981be3
 creatorsName: cn=admin,dc=example,dc=org
@@ -102,12 +87,11 @@ entryCSN: 20220822233027.277675Z#000000#000#000000
 modifiersName: cn=admin,dc=example,dc=org
 modifyTimestamp: 20220822233027Z
 
-dn: cn=bob,ou=auto.home,ou=automount,ou=ais,dc=example,dc=org
+dn: cn=bob,ou=auto.homes,ou=automount,ou=ais,dc=example,dc=org
 cn: bob
 objectClass: top
 objectClass: automount
-automountInformation: -fstype=nfs,rw,hard,intr,nodev,exec,nosuid,rsize=8192,
- wsize=8192 nfs.example.com:/export/home/bob
+automountInformation: -fstype=bind,rw :/export/home/bob
 structuralObjectClass: automount
 entryUUID: 25db6d4e-b6be-103c-8f27-37845c981be3
 creatorsName: cn=admin,dc=example,dc=org
