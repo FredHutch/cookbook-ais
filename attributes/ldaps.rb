@@ -8,12 +8,12 @@ node.default['ais']['search_base'] = 'ou=automount,ou=ais,dc=example,dc=org'
 # This is a password for TESTING ONLY.  It's "letmein"
 node.default['openldap']['rootpw'] = \
   '{SSHA}BKUwewI6N9Yat00Aoxn/nNUEq78ifdif'
-node.default['openldap']['server'] = 'ldap.example.org'
+node.default['openldap']['server'] = '127.0.0.1'
 node.default['openldap']['basedn'] = 'dc=example,dc=org'
 node.default['openldap']['cn'] = 'admin'
 node.default['openldap']['admin_cn'] = 'administrators'
 
-# Required
+# Required- do not change/override without knowing the impact
 #
 node.default['openldap']['schemas'] = %w(
   core.schema
