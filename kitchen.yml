@@ -26,9 +26,11 @@ platforms:
 suites:
   - name: default
     run_list:
+      - recipe[helpers::apt_update]
       - recipe[ais::ldap_server]
-      - recipe[helpers::default]
+      - recipe[helpers::populate_directory]
       - recipe[ais::ldap_autofs_client]
+      - recipe[helpers::node_setup]
     verifier:
       inspec_tests:
         - test/integration/default
