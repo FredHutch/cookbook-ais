@@ -6,6 +6,10 @@
 
 # Configure autofs to use an ldap server- does not configure ldap.conf
 
+package 'autofs-ldap' do
+  action :install
+end
+
 template '/etc/default/autofs' do
   source 'autofs.defaults.erb'
   owner 'root'
