@@ -1,4 +1,12 @@
-# ais
+# Automount Information System
 
-TODO: Enter the cookbook description here.
+This is a cookbook for installing a system with the purpose of hosting automount information.
+
+Eventually there will be both YP/NIS and LDAP sources for automount information
+
+This cookbook (YP or LDAP) will not be responsible for map contents
+
+## LDAP Configuration
+
+
 
