@@ -12,6 +12,7 @@ package 'autofs-ldap' do
 end
 
 node.override['openldap']['slapd_type'] = 'consumer'
-node.override['openldap']['slapd_rid'] = 1
+node.override['openldap']['slapd_rid'] = \
+  node['ais']['consumers'].find_index(node['hostname'])
 
 include_recipe 'openldap::default'
