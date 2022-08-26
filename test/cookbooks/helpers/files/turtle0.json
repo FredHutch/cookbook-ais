@@ -1,0 +1,6 @@
+{
+  "openldap": {
+    "rootpw": "{SSHA}BKUwewI6N9Yat00Aoxn/nNUEq78ifdif",
+    "slapd_replpw": "onetwothree"
+  }
+}

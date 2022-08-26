@@ -41,3 +41,12 @@ suites:
     verifier:
       inspec_tests:
         - test/integration/default
+  - name: turtle0
+    run_list:
+      - recipe[helpers::apt_update]
+      - recipe[helpers::turtle0]
+      - recipe[ais::turtle0]
+      - recipe[ais::ldap_consumer]
+    verifier:
+      inspec_tests:
+        - test/integration/default
