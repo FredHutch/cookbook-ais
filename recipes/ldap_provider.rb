@@ -9,4 +9,6 @@ package 'autofs-ldap' do
   action :install
 end
 
+node.override['openldap']['slapd_type'] = 'provider'
+
 include_recipe 'openldap::default'
