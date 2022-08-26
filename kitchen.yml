@@ -24,13 +24,20 @@ platforms:
   - name: ubuntu-18.04
 
 suites:
-  - name: default
+  - name: provider
     run_list:
       - recipe[helpers::apt_update]
       - recipe[ais::ldap_provider]
       - recipe[helpers::populate_directory]
       - recipe[ais::ldap_autofs_client]
       - recipe[helpers::node_setup]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+  - name: consumer
+    run_list:
+      - recipe[helpers::apt_update]
+      - recipe[ais::ldap_consumer]
     verifier:
       inspec_tests:
         - test/integration/default
