@@ -14,9 +14,9 @@ ruby_block 'load turtle0' do
   block do
     turtle0 = IO.read(node['turtle0']['path'])
     secrets = JSON.parse(turtle0)
-    puts secrets.inspect
     node.override['openldap']['rootpw'] = secrets['openldap']['rootpw']
     node.override['openldap']['slapd_replpw'] = secrets['openldap']['slapd_replpw']
   end
+  sensitive true
 end
 
