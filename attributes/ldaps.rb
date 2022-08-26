@@ -19,7 +19,12 @@ node.default['ais']['master_map_name'] = '/etc/auto.master'
 #   'ou=auto.master,ou=automount,ou=ais,dc=example,dc=org'
 node.default['ais']['ldap_uri'] = 'ldap://127.0.0.1'
 node.default['ais']['search_base'] = 'ou=automount,ou=ais,dc=example,dc=org'
-node.default['ais']['consumers'] = %w(foo bar consumer-ubuntu-1804)
+node.default['ais']['consumers'] = %w(
+  foo
+  bar
+  turtle0-ubuntu-1804
+  consumer-ubuntu-1804
+)
 
 # Required- do not change/override without knowing the impact
 #
