@@ -1,5 +1,5 @@
 
-# This is a password for TESTING ONLY.  It's "letmein"
+# Passwords for TESTING ONLY.  It's "letmein"
 node.default['openldap']['rootpw'] = \
   '{SSHA}BKUwewI6N9Yat00Aoxn/nNUEq78ifdif'
 node.default['openldap']['slapd_replpw'] = 'onetwothree'
@@ -11,6 +11,7 @@ node.default['openldap']['server'] = '127.0.0.1'
 node.default['openldap']['basedn'] = 'dc=example,dc=org'
 node.default['openldap']['cn'] = 'admin'
 node.default['openldap']['admin_cn'] = 'administrators'
+node.default['openldap']['slapd_provider'] = 'localhost'
 
 node.default['ais']['master_map_name'] = '/etc/auto.master'
 # use this form if using auto.master from LDAP instead of /etc:
@@ -28,4 +29,3 @@ node.default['openldap']['schemas'] = %w(
   nis.schema
   autofs.schema
 )
-node.default['openldap']['slapd_provider'] = 'localhost'
