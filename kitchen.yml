@@ -27,6 +27,8 @@ suites:
   - name: provider
     run_list:
       - recipe[helpers::apt_update]
+      - recipe[helpers::turtle0]
+      - recipe[ais::turtle0]
       - recipe[ais::ldap_provider]
       - recipe[helpers::populate_directory]
       - recipe[ais::ldap_autofs_client]
@@ -37,6 +39,8 @@ suites:
   - name: consumer
     run_list:
       - recipe[helpers::apt_update]
+      - recipe[helpers::turtle0]
+      - recipe[ais::turtle0]
       - recipe[ais::ldap_consumer]
     verifier:
       inspec_tests:
