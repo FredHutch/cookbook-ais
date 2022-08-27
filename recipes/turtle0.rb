@@ -15,7 +15,10 @@ ruby_block 'load turtle0' do
     turtle0 = IO.read(node['turtle0']['path'])
     secrets = JSON.parse(turtle0)
     node.override['openldap']['rootpw'] = secrets['openldap']['rootpw']
-    node.override['openldap']['slapd_replpw'] = secrets['openldap']['slapd_replpw']
+    node.override['openldap']['slapd_replpw'] = \
+      secrets['openldap']['slapd_replpw']
+    node.override['openldap']['syncrepl_consumer_config']['credentials'] = \
+      secrets['openldap']['slapd_replpw']
   end
   sensitive true
 end

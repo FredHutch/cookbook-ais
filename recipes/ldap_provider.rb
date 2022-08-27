@@ -10,5 +10,7 @@ package 'autofs-ldap' do
 end
 
 node.override['openldap']['slapd_type'] = 'provider'
+node.override['openldap']['syncrepl_consumer_config']['binddn'] = \
+  "#{node['openldap']['syncrepl_cn']},#{node.default['openldap']['basedn']}"
 
 include_recipe 'openldap::default'
