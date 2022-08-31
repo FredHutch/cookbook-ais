@@ -14,7 +14,5 @@ end
 node.override['openldap']['slapd_type'] = 'consumer'
 node.override['openldap']['slapd_rid'] = \
   node['ais']['consumers'].find_index(node['hostname'])
-log 'rid debug' do
-  message "ais consumers contains #{node['ais']['consumers']} vs #{node['hostname']}"
-end
+
 include_recipe 'openldap::default'
