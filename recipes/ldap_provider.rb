@@ -14,3 +14,12 @@ node.override['openldap']['syncrepl_consumer_config']['binddn'] = \
   "#{node['openldap']['syncrepl_cn']},#{node.default['openldap']['basedn']}"
 
 include_recipe 'openldap::default'
+
+# Override openldap cookbook template for slapd.conf
+#  - our version removes limits for syncrepl bind
+#  - also removes sorting of schemas
+begin
+  r = resources(template: "#{openldap_dir}/slapd.conf")
+  r.cookbook 'ais'
+  r.source 'openldap/slapd.conf.erb'
+end
