@@ -54,3 +54,10 @@ suites:
     verifier:
       inspec_tests:
         - test/integration/default
+  - name: client
+    run_list:
+      - recipe[helpers::apt_update]
+      - recipe[ais::ldap_autofs_client]
+    verifier:
+      inspec_tests:
+        - test/integration/default
